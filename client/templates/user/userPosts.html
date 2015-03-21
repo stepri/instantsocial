@@ -1,0 +1,21 @@
+<template name="userPosts">
+  <div class="row">
+    <div class="col-md-12">
+
+      <h3>Posts from {{username}}</h3>
+      <hr>
+
+      {{#if posts}}
+        <div class="posts page">
+          {{#each posts}}
+            {{>postItem}}
+          {{/each}}
+        </div>
+      {{else}}
+        no posts found
+      {{/if}}
+
+
+    </div>
+  </div>
+</template>

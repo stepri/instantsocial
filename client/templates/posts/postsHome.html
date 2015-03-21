@@ -1,0 +1,24 @@
+<template name="postsHome">
+  <div class="row">
+    <div class="col-md-12">
+      {{#if ifUser}}
+        <form class="addPostForm">
+          <textarea class="addPostText form-control" name="text"></textarea>
+          <button type="submit" class="addPostSubmit btn btn-success" style="width: 100%">Post!</button>
+        </form>
+        <hr>
+      {{/if}}
+
+      <div class="posts page">
+        {{#each posts}}
+          {{>postItem}}
+        {{/each}}
+      </div>
+      {{#if postsFound}}
+        <br>
+        <br>
+      {{/if}}
+
+    </div>
+  </div>
+</template>

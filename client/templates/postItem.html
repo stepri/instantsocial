@@ -1,0 +1,20 @@
+<template name="postItem">
+	{{text}}
+	<br>
+
+	<a href="{{pathFor 'singlePost'}}">{{formatDate createdAt "long"}}</a><br>
+
+	<a href="{{pathFor 'userPosts'}}">{{username}}</a>
+	<br>
+	{{#if isOwner}}
+		<form class="form">
+      <button type="submit" class="deleteNote btn btn-danger btn-xs">Delete</button>
+
+      <label class="togglePrivate">
+        <input type="checkbox" checked="{{private}}" />
+        Private
+      </label>
+    </form>
+	{{/if}}
+	<hr>
+</template>
