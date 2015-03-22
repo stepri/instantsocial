@@ -1,0 +1,18 @@
+<template name="chatItem">
+	<div class="panel panel-default">
+		<div class="panel-body">
+			{{{formatText text}}} by
+			{{#if isOwner}}
+				you
+			{{else}}
+				{{user.username}}
+			{{/if}}
+			 - {{formatDate createdAt "ago"}}
+			{{#if isOwner}}
+
+		    <a class="deleteChat btn btn-danger btn-xs pull-right">Delete</a>
+
+			{{/if}}
+		</div>
+	</div>
+</template>

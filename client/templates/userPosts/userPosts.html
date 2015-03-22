@@ -1,0 +1,30 @@
+<template name="userPosts">
+  <div class="row">
+    <div class="col-md-12">
+
+      <h3>Posts from {{user.username}}</h3>
+
+      {{#if currentUser}}
+        <a href="{{pathFor 'userChats' username=user.username}}" class="btn btn-default">Chats</a>
+        {{#if followStatus}}
+          <a href="#" class="btn btn-danger unfollowUser">Unfollow</a>
+        {{else}}
+          <a href="#" class="btn btn-success followUser">Follow</a>
+        {{/if}}
+
+      {{/if}}
+
+      {{#if posts}}
+        <div class="posts page">
+          {{#each posts}}
+            {{>postItem}}
+          {{/each}}
+        </div>
+      {{else}}
+        no posts found
+      {{/if}}
+
+
+    </div>
+  </div>
+</template>

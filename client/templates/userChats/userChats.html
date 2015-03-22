@@ -1,0 +1,30 @@
+<template name="userChats">
+  <div class="row">
+    <div class="col-md-12">
+
+      <h3>Chat with {{user.username}}</h3>
+
+      {{#if chats}}
+        <div class="chats page">
+          {{#each chats}}
+            {{>chatItem}}
+          {{/each}}
+        </div>
+      {{else}}
+        no chats found
+      {{/if}}
+
+      <form class="form userChatsForm">
+        <div class="form-group">
+
+          <textarea class="form-control userChatsText"></textarea>
+        </div>
+        <input type="hidden" class="userChatsTo" value="{{currentUser}}">
+        <button type="submit" class="btn btn-success">Send</button>
+
+      </form>
+
+
+    </div>
+  </div>
+</template>

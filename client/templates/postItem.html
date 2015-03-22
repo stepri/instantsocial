@@ -1,20 +1,20 @@
 <template name="postItem">
-	{{text}}
-	<br>
+	<div class="panel panel-default">
+		<div class="panel-body">
+				{{{formatText text}}}
+				<br>
+				<a href="{{pathFor 'userPosts'}}">{{username}}</a>
+				-
+				<a href="{{pathFor 'singlePost'}}">{{formatDate createdAt "long"}}</a>
+				{{#if isOwner}}
+		      <a href="#" class="deletePost btn btn-danger btn-xs pull-right">Delete</a>
 
-	<a href="{{pathFor 'singlePost'}}">{{formatDate createdAt "long"}}</a><br>
+		      <label class="togglePrivate pull-right">
+		        <input type="checkbox" checked="{{private}}" />
+		        Private
+		      </label>
+				{{/if}}
 
-	<a href="{{pathFor 'userPosts'}}">{{username}}</a>
-	<br>
-	{{#if isOwner}}
-		<form class="form">
-      <button type="submit" class="deleteNote btn btn-danger btn-xs">Delete</button>
-
-      <label class="togglePrivate">
-        <input type="checkbox" checked="{{private}}" />
-        Private
-      </label>
-    </form>
-	{{/if}}
-	<hr>
+		</div>
+	</div>
 </template>

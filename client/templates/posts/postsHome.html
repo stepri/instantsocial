@@ -7,16 +7,29 @@
           <button type="submit" class="addPostSubmit btn btn-success" style="width: 100%">Post!</button>
         </form>
         <hr>
-      {{/if}}
 
-      <div class="posts page">
-        {{#each posts}}
-          {{>postItem}}
-        {{/each}}
-      </div>
-      {{#if postsFound}}
-        <br>
-        <br>
+
+        <div class="posts page">
+          {{#each posts}}
+            {{>postItem}}
+          {{/each}}
+        </div>
+        {{#if postsFound}}
+          <br>
+          <br>
+        {{/if}}
+      {{else}}
+        <div class="panel panel-default">
+      		<div class="panel-body">
+            <h3 class="page-header text-center">Instant Social</h3>
+
+            <h4 class="text-center">It's soooo fast</h4>
+
+            <p class="text-center">Please login or signup to get started!</p>
+          </div>
+        </div>
+
+
       {{/if}}
 
     </div>

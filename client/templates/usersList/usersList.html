@@ -2,11 +2,20 @@
   <div class="row">
     <div class="col-md-12">
 
-      Users
+      <h3>Users</h3>
+
+      <hr>
 
       <div class="posts page">
         {{#each users}}
-          {{username}}
+          <a href="{{pathFor 'userPosts'}}">{{username}}</a>
+
+          {{#if currentUser username}}
+            CURRENT
+          {{/if}}
+
+
+          <br>
         {{/each}}
       </div>
 

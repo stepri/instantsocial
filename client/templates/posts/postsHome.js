@@ -18,9 +18,9 @@ Template.postsHome.events({
 
     $(e.target).find('.addPostText').val('');
 
-    Meteor.call("createPost", PostText, function(error, postId) {
-      Router.go('/post/'+postId);
-    });
+    Meteor.call("createPost", PostText);
+
+    return false;
 
 
   },
